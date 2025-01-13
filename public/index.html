@@ -2,12 +2,129 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
+  rel="stylesheet">
+ <!-- font awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+ integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
   <link href="./css/style.css" rel="stylesheet">
+
 </head>
 <body>
-  <h1 class="text-3xl font-bold ">
-    Hello world!
-  </h1>
+
+   <!-- Header section -->
+    <header class="bg-black py-6 lg:py-12 text-trend-grey uppercase">
+        <!-- header container -->
+         <div class="container flex items-center justify-between space-x-8 lg:space-x-16">
+            <!-- logo -->
+             <a href="#" class="pl-4 md:pl-0 text-4xl lg:text-6xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-trend-red to-trend-grey">TREND</a>
+             <!-- mobile menu -->
+              <div class="block md:hidden pr-4">
+                <div class="space-y-1 cursor-pointer">
+                    <div class="bg-trend-grey w-8 h-1 rounded-full"></div>
+                    <div class="bg-trend-grey w-8 h-1 rounded-full"></div>
+                    <div class="bg-trend-grey w-8 h-1 rounded-full"></div>
+                </div>
+              </div>
+             <!-- navigation -->
+              <nav class="hidden md:flex justify-between flex-1">
+                <!-- menu -->
+                 <div class="flex items-center lg:text-lg space-x-4 lg:space-x-8">
+                    <a href="#" class="hover:text-trend-yellow transition duration-500">Movies</a>
+                    <a href="#" class="hover:text-trend-yellow transition duration-500 whitespace-nowrap">Where Can I Watch</a>
+                    <a href="#" class="hover:text-trend-yellow transition duration-500">Actors</a>
+                    <a href="#" class="hover:text-trend-yellow transition duration-500">Music</a>
+                 </div>
+                 <!-- login area -->
+                  <div class="flex items-center space-x-4 lg:space-x-8">
+                  <!-- search area -->
+                   <form>
+                    <div class=" group border-r px-4 mx-4 py-1 border-trend-red">
+                        <input type="text" class="opacity-0 group-hover:opacity-100 bg- bg-transparent border-b border-trend-red focus:outline-none w-24 lg:ww-44 transition duration-500">
+                        <button class="-ml-4 group-hover:ml-0 transition duration-500"> <i class="fas fa-search group-hover:text-trend-red transition duration-500"></i></button>
+                    </div>
+                   </form>
+                   <!-- Registe-login Area -->
+                    <div class="flex items-center space-x-4 lg:space-x-8 lg:text-lg">
+                        <a href="#">Login</a>
+                        <a href="#" class="bg-trend-red px-3 py-1 hover: bg-rose-600 hover:text-trend-red cursor-pointer transition duration-500">Register</a>
+                    </div>
+                </div>
+              </nav>
+         </div>
+    </header>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+     <!-- Hero section -->
+     <section class="h-64 md:h-96 lg:h-128 group relative">
+        <!-- Hero image -->
+         <img src="./images/batman.jpg" alt="Main image" class="h-full w-full object-cover">
+         <!-- hero content -->
+          <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black">
+            <!-- hero content container -->
+             <div class="container pl-10 lg:pl-0">
+                <h3 class="text-trend-yellow tracking-wider group-hover:mb-1 duration-500">Action, Drama, Thriller</h3>
+                <h1 class=" text-4xl lg:text-6xl text-trend-grey group-hover:mb-1 duration-500">The Dark Night</h1>
+                <p class="text-trend-grey group-hover:mb-2 duration-500 text-sm lg:text-base w3/4 lg:w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime commodi esse nam possimus blanditiis. Aperiam et labore distinctio deleniti atque!</p>
+              <!-- Hero Detail container -->
+                <div class="flex space-x-8 opacity-0 group-hover:opacity-100 group-hover:mb-10 lg:group-hover:mb-20 duration-1000">
+                    <!-- hero button -->
+                     <div class="flex space-x-2 items-center cursor-pointer">
+                        <a href="https://www.netflix.com/tr/" class="text-trend-grey uppercase lg:text-lg hover:text-trend-red duration-500">Watch The Movie</a>
+                        <div class="flex h-8 w-8 rounded-full text-center items-center justify-center bg-trend-red text-trend-grey">
+                            <i class="fas fa-play"></i>
+                        </div>
+                     </div>
+                </div>
+            </div>
+          </div>
+     </section>
+
+     <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- Movies Section -->
+<section class="min-h-screen bg-black flex flex-col items-center justify-center py-10">
+    <!-- Movies Grid -->
+    <div id="movieGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+        <!-- Film Kartı -->
+        <div class="movie bg-gray-800 text-white rounded-lg overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-105 relative w-[300px] h-[500px]">
+            <img src="https://picsum.photos/300/400" alt="Film Başlığı" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-center text-white font-semibold text-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Film Detayları -->
+    <div id="movieDetails" class="fixed inset-0 bg-black bg-opacity-95 text-white flex flex-col items-center justify-center z-50 hidden">
+        <button id="closeDetails" class="absolute top-4 right-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+            Kapat
+        </button>
+        <div class="bg-gray-800 text-white rounded-lg overflow-hidden shadow-md w-[300px] h-[500px] relative">
+            <img id="detailImage" src="https://picsum.photos/300/400" alt="Film Görseli" class="w-full h-full object-cover">
+            <div class="p-4">
+                <h2 id="detailTitle" class="text-4xl font-bold mb-2">Film Başlığı</h2>
+                <p id="detailYear" class="text-lg text-gray-400 mb-4">Yayın Yılı: Bilinmiyor</p>
+                <p id="detailDescription" class="text-lg text-center px-6">Film açıklaması burada görünecek.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+          
+<script src="movies.js"></script>
 </body>
 </html>
+
+
+
+
+
