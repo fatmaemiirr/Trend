@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TREND</title>
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap"rel="stylesheet">
+
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body class="font-open dark">
+ 
+  <!--Header Section-->
+  <header class="dark:bg-black bg-white py-6 lg:py-12 dark:text-gega-grey text-black uppercase">
+    <!--Header Container-->
+    <div class="container flex items-center justify-between space-x-8 lg:space-x-16">
+      <!--Logo-->
+      <a href="index.html" class="pl-4 md:pl-0 text-4xl lg:text-6xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey">Trend</a>
+
+      <!--Mobile Menu-->
+      <div class="block md:hidden pr-4">
+        <div class="space-y-1 cursor-pointer">
+          <div class="bg-gega-grey w-8 h-1 rounded-full"></div>
+          <div class="bg-gega-grey w-8 h-1 rounded-full"></div>
+          <div class="bg-gega-grey w-8 h-1 rounded-full"></div>
+        </div>
+      </div>
+
+      <!--Navigation-->
+      <nav class="hidden md:flex justify-between flex-1">
+        <!--Menu-->
+        <div class="flex items-center lg:text-lg space-x-4 lg:space-x-8">
+          <a href="movies.html" class="hover:text-gega-melon transition duration-500">movies</a>
+          <a href="wehere.html" class="hover:text-gega-melon transition duration-500 whitespace-nowrap">Where can I watch?</a>
+          <a href="actors.html" class="hover:text-gega-melon transition duration-500">actors</a>
+          <a href="music.html" class="hover:text-gega-melon transition duration-500">music</a>
+        </div>
+        <!--Login Area-->
+        <div class="flex items-center space-x-4 lg:space-x-8">
+            <!--Search Area-->
+            <form>
+              <div class="group border-r px-4 mx-4 py-1 border-gega-red">
+                <input type="text"
+                  class="opacity-0 group-hover:opacity-100 bg-transparent border-b border-gega-red focus:outline-none w-24 lg:w-44 transition duration-500 ">
+                <button class="-ml-4 group-hover:ml-0 transition duration-500"><i
+                    class="fas fa-search group-hover:text-gega-red transition duration-500"></i></button>
+              </div>
+            </form>
+            <!--Signup Area-->
+            <div class="flex items-center space-x-4 lg:space-x-8 lg:text-lg">
+              <a href="login.html">Login</a>
+              <a href="register.html"
+                class="bg-gega-red px-3 py-1 hover:bg-rose-600 hover:text-gega-grey cursor-pointer transition duration-500 whitespace-nowrap">register</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+ 
+    <div class="container mx-auto p-4 bg-black">
+        <h1 class="text-2xl font-bold mb-4 text-gega-melon">Movies</h1>
+        <div id="movies-container" class="flex flex-wrap gap-4">
+          <!-- Filmler buraya yüklenecek -->
+        </div>
+      </div>
+
+
+
+
+     
+  <!--Footer Section-->
+  <footer class="bg-black text-gega-grey">
+    <!--Footer Container-->
+    <div class="container flex flex-col md:flex-row px-10 lg:px-0 pb-8">
+      <!--Left-->
+      <div class="basis-1/3">
+        <a href="#"
+          class="text-2xl lg:text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey">Trend</a>
+        <p class="text-sm mt-2">2025 ArinSOFT No &copy; COPYRIGHT</p>
+      </div>
+      <!--Middle-->
+      <div class="basis-1/3">
+        <h2 class="mb-2 text-gega-red">LINKS</h2>
+        <div class="grid grid-cols-5 gap-2 uppercase">
+          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Movies</a>
+          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Where?</a>
+          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Actors</a>
+          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Music</a>
+        </div>
+      </div>
+      <!--Right-->
+      <div class="basis-1/3">
+        <h2 class="mb-2 text-gega-red">FOLLOW US</h2>
+        <form action="" class="flex">
+          <input class="py-1 px-2 bg-transparent border border-gega-red placeholder:text-xs outline-none"
+            placeholder="TYPE YOUR EMAIL" type="text">
+          <button
+            class="py-1 px-2 bg-transparent border border-gega-red bg-gega-red font-gemunu uppercase">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  <script src="/public/js/movies.js"></script>
+
+</body>
+</html>
