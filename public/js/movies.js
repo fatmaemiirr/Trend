@@ -1,4 +1,3 @@
-// movies.js
 const url = 'https://moviesdatabase.p.rapidapi.com/titles';
 const options = {
   method: 'GET',
@@ -16,6 +15,7 @@ async function fetchMovies() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
+    console.log(data);
     displayMovies(data.results); // Gelen filmleri ekrana göstermek için bir fonksiyon çağrılır
   } catch (error) {
     console.error('Hata:', error);
@@ -32,10 +32,21 @@ function displayMovies(movies) {
   if (movies && movies.length > 0) {
     movies.forEach((movie) => {
       const movieCard = `
-        <div class="bg-white shadow-md rounded p-4 w-full md:w-1/2 lg:w-1/3">
-          <h3 class="font-bold text-lg">${movie.primaryTitle || 'Bilinmeyen Başlık'}</h3>
-          <p class="text-gray-700">Yıl: ${movie.startYear || 'Bilinmiyor'}</p>
-          <p class="text-gray-700">Tür: ${movie.genres ? movie.genres.join(', ') : 'Bilinmiyor'}</p>
+        <div class="group relative overflow-hidden bg-black shadow-lg rounded-lg">
+          <!-- Film Görseli -->
+          <img src="${movie.primaryImage?.url || `https://picsum.photos/150/200?random=${Math.random()}`}" 
+               alt="${movie.titleText?.text || 'Bilinmeyen Başlık'}" 
+               class="w-full h-48 object-cover group-hover:scale-110 duration-500">
+          <!-- Film Bilgileri -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent group-hover:opacity-50 transition-opacity duration-500"></div>
+          <div class="absolute bottom-4 left-4 right-4 px-4 py-2">
+            <h3 class="text-gega-grey group-hover:text-gega-melon group-hover:mb-2 duration-500">
+              ${movie.titleText?.text || 'Bilinmeyen Başlık'}
+            </h3>
+            <p class="text-xs opacity-0 group-hover:opacity-100 duration-500 text-gega-grey">
+              ${movie.releaseYear?.year || 'Yayın tarihi bilinmiyor'}
+            </p>
+          </div>
         </div>
       `;
       container.innerHTML += movieCard;

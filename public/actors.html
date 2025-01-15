@@ -18,13 +18,16 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link href="./css/styles.css" rel="stylesheet">
+  <script src="./js/actors.js" defer></script>
+
+
 </head>
 
-<body class="font-open dark">
+<body class="font-open dark bg-black">
 
  
   <!--Header Section-->
-  <header class="dark:bg-black bg-white py-6 lg:py-12 dark:text-gega-grey text-black uppercase">
+  <header class="dark:bg-black bg-black py-6 lg:py-12 dark:text-gega-grey text-black uppercase">
     <!--Header Container-->
     <div class="container flex items-center justify-between space-x-8 lg:space-x-16">
       <!--Logo-->
@@ -44,7 +47,7 @@
         <!--Menu-->
         <div class="flex items-center lg:text-lg space-x-4 lg:space-x-8">
           <a href="movies.html" class="hover:text-gega-melon transition duration-500">movies</a>
-          <a href="wehere.html" class="hover:text-gega-melon transition duration-500 whitespace-nowrap">Where can I watch?</a>
+          <a href="tvshows.html" class="hover:text-gega-melon transition duration-500 whitespace-nowrap">TV Shows</a>
           <a href="actors.html" class="hover:text-gega-melon transition duration-500">actors</a>
           <a href="music.html" class="hover:text-gega-melon transition duration-500">music</a>
         </div>
@@ -71,7 +74,13 @@
     </header>
 
 
-
+   <!--Actors Section-->
+   <main class="container mx-auto py-10 ">
+    <h1 class="text-3xl font-bold mb-8 text-center text-gega-red">Actors</h1>
+    <div id="actors-container" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <!-- Actors list will be populated here -->
+    </div>
+  </main>
 
 
 
@@ -108,6 +117,6 @@
       </div>
     </div>
   </footer>
-</body>
 
+</body>
 </html>
