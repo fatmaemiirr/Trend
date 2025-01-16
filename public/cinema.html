@@ -18,9 +18,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link href="./css/styles.css" rel="stylesheet">
+  <script src="./js/cinema.js" defer></script>
+
 </head>
 
-<body class="font-open dark">
+<body class="font-open dark bg-black">
 
  
   <!--Header Section-->
@@ -44,9 +46,9 @@
         <!--Menu-->
         <div class="flex items-center lg:text-lg space-x-4 lg:space-x-8">
           <a href="movies.html" class="hover:text-gega-melon transition duration-500">movies</a>
-          <a href="tvshows.html" class="hover:text-gega-melon transition duration-500 whitespace-nowrap">TV Shows</a>
+          <a href="wehere.html" class="hover:text-gega-melon transition duration-500 whitespace-nowrap">tv Shows</a>
           <a href="actors.html" class="hover:text-gega-melon transition duration-500">actors</a>
-          <a href="music.html" class="hover:text-gega-melon transition duration-500">music</a>
+          <a href="cinema.html" class="hover:text-gega-melon transition duration-500">cinema</a>
         </div>
         <!--Login Area-->
         <div class="flex items-center space-x-4 lg:space-x-8">
@@ -70,9 +72,14 @@
       </div>
     </header>
 
-
-
-
+  <!-- Cinemas Section -->
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-8 text-center text-gega-red">Cinemas</h1>
+    <div id="cinemas-container" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <!-- Cinemas list will be populated here -->
+    </div>
+  </main>
+    
 
 
      
@@ -86,16 +93,16 @@
           class="text-2xl lg:text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey">Trend</a>
         <p class="text-sm mt-2">2025 ArinSOFT No &copy; COPYRIGHT</p>
       </div>
-      <!--Middle-->
-      <div class="basis-1/3">
-        <h2 class="mb-2 text-gega-red">LINKS</h2>
-        <div class="grid grid-cols-5 gap-2 uppercase">
-          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Movies</a>
-          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Where?</a>
-          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Actors</a>
-          <a class="col-span-2 hover:text-gega-melon duration-500" href="#">Music</a>
-        </div>
+     <!--Middle-->
+     <div class="basis-1/3">
+      <h2 class="mb-2 text-gega-red">LINKS</h2>
+      <div class="grid grid-cols-5 gap-2 uppercase">
+        <a href="movies.html" class="col-span-2 hover:text-gega-melon duration-500" href="#">Movies</a>
+        <a href="tvshows.html" class="col-span-2 hover:text-gega-melon duration-500" href="#">Tv Shows</a>
+        <a href="actors.html".html" class="col-span-2 hover:text-gega-melon duration-500" href="#">Actors</a>
+        <a href="cinema.html" class="col-span-2 hover:text-gega-melon duration-500" href="#">cinema</a>
       </div>
+    </div>
       <!--Right-->
       <div class="basis-1/3">
         <h2 class="mb-2 text-gega-red">FOLLOW US</h2>

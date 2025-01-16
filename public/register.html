@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TREND</title>
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap"
+    rel="stylesheet">
+
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="./js/register.js" defer></script>
+
+</head>
+
+<body class="bg-black min-h-screen flex items-center justify-center">
+
+  <div class="bg-gega-red bg-opacity-50 p-8 rounded-lg shadow-xl max-w-sm w-full text-gega-grey">
+    <h1 class="text-3xl font-bold mb-8 text-center">Register</h1>
+    <form id="register-form" class="space-y-4">
+    
+       <!-- Username Field -->
+       <div>
+        <label for="username" class="block text-gega-grey font-medium">Kullanıcı Adı</label>
+        <input 
+          type="text" 
+          id="username" 
+          placeholder="Kullanıcı adınızı giriniz"
+          class="w-full mt-2 p-3 border border-black rounded-md bg-black bg-opacity-50 text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
+          required
+        />
+      </div>
+
+      <!-- Password Field -->
+      <div>
+        <label for="password" class="block text-gega-grey font-medium">Şifre</label>
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="Şifrenizi giriniz"
+          class="w-full mt-2 p-3 border border-black rounded-md bg-black bg-opacity-50 text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
+          required
+        />
+        <p id="password-feedback" class="mt-2 text-sm"></p>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button 
+          type="submit" 
+          id="register-button"
+          class="w-full py-3 bg-gega-red text-white rounded-lg hover:bg-red-600 focus:outline-none"
+          disabled>
+          Register
+        </button>
+      </div>
+
+      <!-- Sign Up Button -->
+      <div class="text-center mt-4">
+        <button 
+          type="button" 
+          id="sign-up"
+          class="text-gega-melon underline hover:text-gega-dark-red">
+          Sign up
+        </button>
+      </div>
+    </form>
+  </div>
+
+  </body>
+  </html>
