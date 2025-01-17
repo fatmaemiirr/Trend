@@ -5,25 +5,25 @@ const registerButton = document.getElementById('register-button');
 
 // Şifre kurallarını doğrulama fonksiyonu
 function validatePassword(password) {
-  const hasUpperCase = /[A-Z]/.test(password);
-  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-  const isValidLength = password.length >= 8 && password.length <= 16;
+  const hasUpperCase = /[A-Z]/.test(password);  //en az bir büyüük harff
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);  ///en az bir özel karakter
+  const isValidLength = password.length >= 8 && password.length <= 16; //en az 8 en fazla 16 karakter
 
   if (hasUpperCase && hasSpecialChar && isValidLength) {
-    passwordFeedback.textContent = 'Successful';
-    passwordFeedback.className = 'mt-2 text-sm text-green-500';
+    passwordFeedback.textContent = 'Successful'; 
+    passwordFeedback.className = 'mt-2 text-sm text-green-500';  // şifrre başarılıı olursa yeşil uuyarrı mesajı
     registerButton.disabled = false;
     return true;
   } else {
     passwordFeedback.textContent = 'Unsuccessful';
-    passwordFeedback.className = 'mt-2 text-sm text-red-500';
+    passwordFeedback.className = 'mt-2 text-sm text-red-500'; //başarısızsa kırmızı uyarı mesajı
     registerButton.disabled = true;
     return false;
   }
 }
 
 // Şifre girişini kontrol et
-passwordInput.addEventListener('input', (e) => {
+passwordInput.addEventListener('input', (e) => { 
   validatePassword(e.target.value);
 });
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Sign up butonuna tıklayınca login sayfasına yönlendirme
+// login butonuna tıklayınca login sayfasına yönlendirme
 document.getElementById('sign-up').addEventListener('click', () => {
   window.location.href = 'login.html';
 });

@@ -7,7 +7,8 @@ const options = {
   },
 };
 
-// Fetch data from the API
+// API'den veri al  // Fetch data from the API
+
 async function fetchActors() {
   try {
     const response = await fetch(url, options);
@@ -24,33 +25,42 @@ async function fetchActors() {
   }
 }
 
-// Display actors on the page
+ // Sayfadaki aktörleri görüntüle // Display actors on the
 function displayActors(actors) {
   const container = document.querySelector('#actors-container');
-  container.innerHTML = ''; // Clear previous content
+  container.innerHTML = ''; // Önceki içeriği temizle
 
   if (actors && actors.length > 0) {
     actors.forEach((actor) => {
       const actorCard = `
-        <div class="group relative overflow-hidden bg-black shadow-lg rounded-lg">
-          <!-- Actor Image -->
+        <div class="group relative overflow-hidden basis-1/3 md:basis-1/4 lg:basis-1/3 bg-black shadow-lg rounded-lg">
+          <!-- Görsel -->
           <img src="${actor.image || `https://picsum.photos/150/200?random=${Math.random()}`}" 
                alt="${actor.name || 'Unknown Actor'}" 
-               class="w-full h-48 object-cover group-hover:scale-110 group-hover:opacity-50 duration-500">
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent group-hover:opacity-50 transition-opacity duration-500"></div>
+               class="w-full h-full object-cover group-hover:scale-110 group-hover:opacity-50 duration-500">
 
-          <!-- Actor Info -->
-          <div class="absolute bottom-4 left-4 right-4 px-4 py-2 text-white">
+          <!-- Bilgi Detay Konteyneri -->
+          <div class="absolute px-6 bottom-8">
+            <!-- İsim -->
             <h3 class="text-gega-grey group-hover:text-gega-melon group-hover:mb-2 duration-500">
               ${actor.name || 'Unknown Actor'}
             </h3>
-            <p class="text-xs opacity-0 group-hover:opacity-100 duration-500 text-gega-grey"">
+            <!-- Açıklama -->
+            <p class="text-xs opacity-0 group-hover:opacity-100 group-hover:mb-10 duration-500 text-gega-grey">
               ${actor.categories ? actor.categories.join(', ') : 'No categories'}
             </p>
 
-           
-            ${actor.link ? `<a href="${actor.link}" target="_blank" class="text-gega-melon underline text-l opacity-0 group-hover:opacity-100 duration-500">IMDb Profile</a>` : ''}
+            <!-- Linkler ve İkonlar -->
+            <div
+              class="absolute flex space-x-8 text-gega-grey opacity-0 -bottom-2 group-hover:bottom-2 group-hover:opacity-100 duration-500">
+              ${
+                actor.link
+                  ? `<a href="${actor.link}" target="_blank" class="hover:text-gega-red">
+                       <i class="fa-solid fa-play"></i>
+                     </a>`
+                  : ''
+              }
+            </div>
           </div>
         </div>
       `;
@@ -62,5 +72,6 @@ function displayActors(actors) {
   }
 }
 
-// Fetch actors when the page loads
+
+// Sayfa yüklendiğinde aktörleri getir // Fetch actors when the page loads
 document.addEventListener('DOMContentLoaded', fetchActors);

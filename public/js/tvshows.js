@@ -1,18 +1,13 @@
-// JavaScript Section
-const url = 'https://imdb236.p.rapidapi.com/imdb/top250-tv';
+const url = 'https://moviesverse1.p.rapidapi.com/current-popular-tv-shows';
 const options = {
   method: 'GET',
   headers: {
     'x-rapidapi-key': '27b69ba214msh5567206a6702962p157ac6jsnc1a2ca3732e3',
-    'x-rapidapi-host': 'imdb236.p.rapidapi.com'
-  }
+    'x-rapidapi-host': 'moviesverse1.p.rapidapi.com',
+  },
 };
 
-let allTVShows = [];
-let displayedTVShows = [];
-const initialCount = 20;
-
-// Fetch data from the API
+// API'den veri çekme // Fetch data from the API
 async function fetchTVShows() {
   try {
     const response = await fetch(url, options);
@@ -20,43 +15,46 @@ async function fetchTVShows() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log('Received Data:', data); // Log data for debugging
-    allTVShows = data;
-    displayedTVShows = allTVShows.slice(0, initialCount);
-    displayTVShows(displayedTVShows);
+    console.log('Gelen Veri:', data); // Debugging için veriyi konsola yazdır
+    displayTVShows(data.list); // API'den gelen 'list' dizisini işliyoruz
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Hata:', error);
     document.querySelector('#tvshows-container').innerHTML =
-      '<p class="text-red-500">An error occurred while loading TV shows.</p>';
+      '<p class="text-red-500">TV şovları yüklenirken bir hata oluştu.</p>';
   }
 }
 
-// Display TV shows on the page
-function displayTVShows(tvShows) {
+ // Sayfadaki dizileri görüntüle // Display TV shows on the page
+function displayTVShows(tvshows) {
   const container = document.querySelector('#tvshows-container');
-  container.innerHTML = ''; // Clear previous content
+  container.innerHTML = ''; // Önceki içeriği temizle
 
-  if (tvShows && tvShows.length > 0) {
-    tvShows.forEach((tvShow) => {
+  if (tvshows && tvshows.length > 0) {
+    tvshows.forEach((show) => {
       const tvShowCard = `
-        <div class="group relative overflow-hidden bg-black shadow-lg rounded-lg">
-          <!-- TV Show Image -->
-          <img src="${tvShow.primaryImage || `https://picsum.photos/150/200?random=${Math.random()}`}" 
-               alt="${tvShow.title || 'Unknown TV Show'}" 
-               class="w-full h-48 object-cover group-hover:scale-110 group-hover:opacity-50 duration-500">
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div class="group relative overflow-hidden basis-1/3 md:basis-1/4 lg:basis-1/3 bg-black shadow-lg rounded-lg">
+          <!-- Görsel -->
+          <img src="${show.image || `https://picsum.photos/150/200?random=${Math.random()}`}" 
+               alt="${show.title || 'Unknown TV Show'}" 
+               class="w-full h-full object-cover group-hover:scale-110 group-hover:opacity-50 duration-500">
 
-          <!-- TV Show Info -->
-          <div class="absolute bottom-4 left-4 right-4 px-4 py-2 text-white">
+          <!-- Bilgi Detay Konteyneri -->
+          <div class="absolute px-6 bottom-8">
+            <!-- Başlık -->
             <h3 class="text-gega-grey group-hover:text-gega-melon group-hover:mb-2 duration-500">
-              ${tvShow.title || 'Unknown TV Show'}
+              ${show.title || 'Unknown TV Show'}
             </h3>
-            <p class="text-xs opacity-0 group-hover:opacity-100 duration-500 text-gega-grey">
-              Rating: ${tvShow.averageRating || 'N/A'}
+            
+            <!-- Yayın Zamanı ve Bölüm Bilgisi -->
+            <p class="text-xs opacity-0 group-hover:opacity-100 group-hover:mb-10 duration-500 text-gega-grey">
+              ${show.timeline || 'Timeline not available'} - ${show.totalEpisodes || 'Episode count not available'}
             </p>
 
-            ${tvShow.link ? `<a href="${tvShow.link}" target="_blank" class="text-gega-melon underline text-l opacity-0 group-hover:opacity-100 duration-500">More Info</a>` : ''}
+            <!-- IMDb Puanı -->
+            <p class="text-s opacity-0 group-hover:opacity-100 group-hover:mb-2 duration-500 text-gega-grey">
+              IMDb Rating: ${show.imdbRating || 'N/A'}
+            </p>
+            
           </div>
         </div>
       `;
@@ -68,12 +66,5 @@ function displayTVShows(tvShows) {
   }
 }
 
-// Show more TV shows on button click
-document.querySelector('#show-more-tv').addEventListener('click', () => {
-  displayedTVShows = allTVShows;
-  displayTVShows(displayedTVShows);
-  document.querySelector('#show-more-tv').style.display = 'none';
-});
-
-// Fetch TV shows when the page loads
+// Sayfa yüklendiğinde aktörleri getir  // Fetch TV shows when the page loads
 document.addEventListener('DOMContentLoaded', fetchTVShows);

@@ -24,31 +24,29 @@
 
 </head>
 
-<body class="bg-black min-h-screen flex items-center justify-center">
+<body class= " min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('./images/bg.jpg');">">
 
-    <div class="bg-gega-red bg-opacity-50 p-8 rounded-lg shadow-xl max-w-sm w-full text-gega-grey">
-      <h1 class="text-3xl font-bold mb-8 text-center">Giriş</h1>
+
+
+    <div class="bg-black bg-opacity-75 p-8 rounded-lg shadow-xl max-w-sm w-full text-gega-grey">
+      <h1 class="text-3xl font-bold mb-8 text-center"><a href="#" class="pl-4 md:pl-0 text-4xl lg:text-6xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey">Trend</a><br>
+        Login</h1>
       <form id="login-form" class="space-y-6">
         <!-- Username Field -->
         <div>
-          <label for="username" class="block text-gray-300 font-medium">Kullanıcı Adı</label>
-          <input 
-            type="text" 
-            id="username" 
-            placeholder="Kullanıcı adınızı giriniz"
-            class="w-full mt-2 p-3 border border-black rounded-md bg-black bg-opacity-50 text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
+          <label for="username" class="block text-gray-300 font-medium font-gemunu">USER NAME</label>
+          <input type="text" id="username" placeholder="Enter your username."
+            class="font-gemunu w-full mt-2 p-3 border border-black rounded-md bg-black  text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
             required
           />
         </div>
   
         <!-- Password Field -->
         <div>
-          <label for="password" class="block text-gray-300 font-medium">Şifre</label>
+          <label for="password" class="block text-gray-300 font-medium">PASSWORD</label>
           <input 
-            type="password" 
-            id="password" 
-            placeholder="Şifrenizi giriniz"
-            class="w-full mt-2 p-3 border border-black rounded-md bg-black bg-opacity-50 text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
+            type="password" id="password" placeholder="Enter your password."
+            class="font-gemunu w-full mt-2 p-3 border border-black rounded-md bg-black  text-white focus:ring-1 focus:ring-gega-red focus:outline-none"
             required
           />
           <p id="login-feedback" class="mt-2 text-sm"></p>
@@ -59,15 +57,15 @@
           <button 
             type="submit" 
             id="login-button"
-            class="w-full py-3 bg-gega-red text-white rounded-lg hover:bg-red-600 focus:outline-none">
-            Giriş Yap
+            class="w-full py-3 bg-gega-red text-white rounded-lg hover:bg-red-600 focus:outline-none font-bold text-2xl">
+            LOGİN
           </button>
         </div>
   
         <!-- Redirect to Register -->
-        <div class="text-center mt-4">
-          <p class="text-sm text-gray-400">Hesabınız yok mu? 
-            <a href="register.html" class="text-gega-melon underline hover:text-red-500">Kayıt Ol</a>
+        <div class="text-center mt-4 font-gemunu">
+          <p class="text-sm text-gray-400">Don't have an account? 
+            <a href="register.html" class="text-gega-melon underline hover:text-red-500">Register</a>
           </p>
         </div>
       </form>
